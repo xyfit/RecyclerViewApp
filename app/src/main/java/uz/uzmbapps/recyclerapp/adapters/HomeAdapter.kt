@@ -32,6 +32,7 @@ class HomeAdapter(val lists: List<ItemModel>):RecyclerView.Adapter<HomeAdapter.I
 //        }
         holder.itemView.setOnClickListener {
             val i = Intent(holder.itemView.context, ChatActivity::class.java)
+            i.putExtra("mesKey", itemData.message)
             holder.itemView.context.startActivity(i)
         }
 

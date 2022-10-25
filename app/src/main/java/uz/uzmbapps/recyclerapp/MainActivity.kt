@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import uz.uzmbapps.recyclerapp.adapters.AdapterCallback
 import uz.uzmbapps.recyclerapp.adapters.HomeAdapter
 import uz.uzmbapps.recyclerapp.models.ItemModel
 
@@ -52,7 +53,12 @@ class MainActivity : AppCompatActivity() {
         myList.add(ItemModel("text4 ", "mes4"))
         myList.add(ItemModel("text5 ", "mes5"))
 
-        recyclerView.adapter = HomeAdapter(myList)
+        recyclerView.adapter = HomeAdapter(myList, object : AdapterCallback{
+            override fun itemClick(a: Int) {
+                myList.removeAt(a)
+                recyclerView.adapter?.notifyDataSetChanged()
+            }
+        })
 
     }
 
@@ -67,4 +73,10 @@ class MainActivity : AppCompatActivity() {
  * item layout
  * model
  * adapter
+ * */
+
+
+/**
+ * ItemModel(): Serializable
+ * get -> intent.getSerializableExtra("key") as ItemModel
  * */

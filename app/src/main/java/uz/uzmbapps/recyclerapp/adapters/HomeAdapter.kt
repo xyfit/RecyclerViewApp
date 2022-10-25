@@ -6,8 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import android.widget.Toast
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import uz.uzmbapps.recyclerapp.ChatActivity
 import uz.uzmbapps.recyclerapp.R
@@ -40,4 +38,7 @@ class HomeAdapter(val lists: List<ItemModel>):RecyclerView.Adapter<HomeAdapter.I
     }
 
     override fun getItemCount(): Int = lists.size
+}
+interface AdapterCallback{
+    fun itemClick(a: Int)
 }

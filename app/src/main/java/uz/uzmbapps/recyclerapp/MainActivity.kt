@@ -1,9 +1,8 @@
 package uz.uzmbapps.recyclerapp
 
 import android.annotation.SuppressLint
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.recyclerview.widget.GridLayoutManager
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import uz.uzmbapps.recyclerapp.adapters.HomeAdapter
@@ -56,7 +55,14 @@ class MainActivity : AppCompatActivity() {
         recyclerView.adapter = HomeAdapter(myList)
 
     }
+
+    override fun onStart() {
+        super.onStart()
+
+    }
+
 }
+
 /**
  * item layout
  * model
